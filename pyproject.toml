@@ -1,0 +1,22 @@
+[project]
+name = "stock-list"
+version = "0.1.0"
+description = "Stock screener using Kiwoom REST API"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27.0",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+stock-list = "src.main:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

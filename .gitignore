@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+
+stock_list.egg-info/
+build/
+dist/
+
+output/
+
+kiwoom_REST_API_doc.pdf
