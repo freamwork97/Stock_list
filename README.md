@@ -37,6 +37,12 @@ uv run stock-list --mode condition --condition-idx 001 --limit 50
 uv run stock-list --mode swing --min-price 5000 --min-volume 300000 --limit 50 --out output/weekly_candidates.csv
 ```
 
+일주일 스윙 후보에 대해 당일 눌림/재상승 신호 판정:
+
+```powershell
+uv run swing-signal --input output/weekly_candidates.csv --tick-unit 1 --only-signal --out output/weekly_signals.csv
+```
+
 조건검색(ka10171/ka10172)은 PDF 기준 URL이 `/api/dostk/websocket` 입니다.
 모의투자 환경에서는 조건검색이 실패(코드 7/1999)할 수 있어 실전 환경에서 확인이 필요합니다.
 `.env`에서 아래 값을 조정하세요.

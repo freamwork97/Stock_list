@@ -121,5 +121,17 @@ class KiwoomClient:
             body={"seq": condition_idx, "search_type": "0"},
         )
 
+    # ka10080: 주식분봉차트조회
+    def get_stock_chart(self, stock_code: str, tick_unit: str = "1") -> dict[str, Any]:
+        return self._request(
+            api_id="ka10080",
+            path="/api/dostk/chart",
+            body={
+                "stk_cd": stock_code,
+                "tic_scope": str(tick_unit),
+                "upd_stkpc_tp": "1",
+            },
+        )
+
     def close(self) -> None:
         self.token_manager.revoke()

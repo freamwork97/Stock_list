@@ -13,6 +13,7 @@ dependencies = [
 
 [project.scripts]
 stock-list = "src.main:main"
+swing-signal = "src.swing_signal:main"
 
 [tool.uv]
 package = true
